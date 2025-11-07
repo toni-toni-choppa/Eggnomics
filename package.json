@@ -1,0 +1,36 @@
+{
+  "name": "eggnomic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toni-toni-choppa/Eggnomics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/toni-toni-choppa/Eggnomics/issues"
+  },
+  "homepage": "https://github.com/toni-toni-choppa/Eggnomics#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mysql2": "^3.15.3",
+    "next": "^16.0.1",
+    "node-cron": "^4.2.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.0",
+    "@types/react": "^19.2.2",
+    "typescript": "5.9.3"
+  }
+}
