@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import latestRouter from './routes/latest.js';
 import connection from './mysql.js';
 const router = Router();
 
@@ -18,5 +19,7 @@ router.get('/status', (req, res) => {
         res.status(500).json({ status: 500, message: 'Internal Server Error', details: error.message });
     }
 });
+
+router.use('/latest', latestRouter);
 
 export default router;

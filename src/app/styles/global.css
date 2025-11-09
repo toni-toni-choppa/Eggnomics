@@ -1,0 +1,192 @@
+/* =========================================================
+     BASE TYPOGRAPHY + COLORS (INTER DESIGN SYSTEM)
+     ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    /* Font families */
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+
+    /* Colors */
+    --color-bg: #fafafa;
+    --color-text: #111111;
+    --color-text-muted: #555555;
+    --color-border: #e5e5e5;
+    --color-accent: #007aff;
+
+    /* Typography scale */
+    --font-size-display: 80px;
+    --font-size-h1: 48px;
+    --font-size-h2: 32px;
+    --font-size-body: 16px;
+    --font-size-small: 13px;
+
+    /* Spacing system (8px base) */
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 48px;
+    --space-6: 64px;
+    --space-7: 96px;
+}
+
+/* =========================================================
+     GLOBAL RESET + BASE STYLES
+     ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Smooth typography scaling on smaller devices */
+@media (max-width: 768px) {
+    :root {
+        --font-size-display: 56px;
+        --font-size-h1: 40px;
+        --font-size-h2: 24px;
+    }
+}
+
+/* =========================================================
+     TYPOGRAPHY
+     ========================================================= */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--color-text);
+    margin-top: 0;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-3);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    line-height: 1.3;
+    margin-bottom: var(--space-2);
+}
+
+p {
+    font-size: var(--font-size-body);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-3);
+}
+
+small {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+}
+
+/* =========================================================
+     HERO SECTION
+     ========================================================= */
+
+.hero {
+    max-width: 720px;
+    margin: var(--space-7) auto var(--space-7);
+    text-align: center;
+    padding: 0 var(--space-3);
+}
+
+.hero-title {
+    font-size: var(--font-size-display);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-3);
+    color: var(--color-text);
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-5);
+}
+
+/* =========================================================
+     BUTTONS
+     ========================================================= */
+
+.button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    padding: calc(var(--space-1)) calc(var(--space-2));
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease-in-out, transform 0.15s ease;
+}
+
+.button:hover {
+    background-color: #005fdb;
+    transform: translateY(-1px);
+}
+
+.button-secondary {
+    background-color: transparent;
+    color: var(--color-accent);
+    border: 1px solid var(--color-border);
+}
+
+.button-secondary:hover {
+    background-color: rgba(0, 122, 255, 0.05);
+}
+
+/* =========================================================
+     LAYOUT UTILITIES
+     ========================================================= */
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 var(--space-3);
+}
+
+.section {
+    padding: var(--space-6) 0;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--space-4);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* =========================================================
+     FOOTER
+     ========================================================= */
+
+footer {
+    text-align: center;
+    padding: var(--space-5) 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-small);
+    border-top: 1px solid var(--color-border);
+}

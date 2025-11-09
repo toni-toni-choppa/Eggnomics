@@ -1,3 +1,6 @@
+import Sidebar from '../components/sidebar';
+import './styles/global.css';
+
 export default function Layout({
     children,
 }: {
@@ -5,7 +8,10 @@ export default function Layout({
 }) {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body>
+                <Sidebar />
+                {children}
+            </body>
         </html>
     );
 }

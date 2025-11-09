@@ -10,6 +10,11 @@ const series = {
         name: "Grade A Eggs",
         id: "APU0000708111",
         unit: "dozen"
+    },
+    "whole_milk": {
+        name: "Whole Milk",
+        id: "APU0000709112",
+        unit: "gallon"
     }
 };
 
@@ -95,3 +100,5 @@ cron.schedule('0 0 * * *', async () => {
         console.error('Error fetching price data:', error);
     }
 });
+
+export default series;
