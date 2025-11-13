@@ -1,3 +1,23 @@
 main {
-    padding: 8px;
+    padding: 16px;
+}
+
+div.product-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+div.product-header span {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+div.product-header p, div.product-header h2 {
+    margin: 0;
+}
+
+div.product-header h2.product-name {
+    margin-bottom: 12px;
 }

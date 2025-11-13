@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/toni-toni-choppa/Eggnomics#readme",
   "dependencies": {
+    "chart.js": "^4.5.1",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
@@ -26,6 +27,7 @@
     "next": "^16.0.1",
     "node-cron": "^4.2.1",
     "react": "^19.2.0",
+    "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {

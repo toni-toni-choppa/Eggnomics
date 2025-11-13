@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import latestRouter from './routes/latest.js';
+import productRouter from './routes/product.js';
 import connection from './mysql.js';
 const router = Router();
 
@@ -21,5 +22,6 @@ router.get('/status', (req, res) => {
 });
 
 router.use('/latest', latestRouter);
+router.use('/product', productRouter);
 
 export default router;

@@ -6,6 +6,11 @@
     height: 100vh;
 }
 
+.sidebar h2 {
+    margin: 8px;
+    margin-bottom: 16px;
+}
+
 .sidebar ul {
     list-style-type: none;
     padding: 0;
@@ -49,7 +54,7 @@
 }
 
 .change svg {
-    margin: 4px;
+    margin: 6px;
 }
 
 .active {
