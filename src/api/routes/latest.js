@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
             const [rows] = await db.query(`
                 SELECT *
                 FROM \`${tableName}\`
-                ORDER BY date DESC
+                ORDER BY STR_TO_DATE(CONCAT('01-', date), '%d-%m-%Y') DESC
                 LIMIT 2
             `);
 

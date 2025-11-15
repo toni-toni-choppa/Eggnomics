@@ -74,17 +74,18 @@ cron.schedule('0 0 * * *', async () => {
 
             const tableName = seriesInfo.name.replace(/\s+/g, '_').toLowerCase();
 
-            for (const item of seriesData.data) {
-                const date = `${item.year}-${new Date(`${item.periodName}-01-${item.year}`).getMonth() + 1}`;
-                const price = item.value;
+            // Create table if it doesn't exist
+            await db.query(`
+               CREATE TABLE IF NOT EXISTS \`${tableName}\` (
+                      date VARCHAR(20) PRIMARY KEY,
+                      price DECIMAL(10, 2)
+               )
+            `);
 
-                // Create table if it doesn't exist
-                await db.query(`
-                   CREATE TABLE IF NOT EXISTS \`${tableName}\` (
-                          date VARCHAR(20) PRIMARY KEY,
-                          price DECIMAL(10, 2)
-                   )
-                `);
+            for (const item of seriesData.data) {
+                const month = new Date(`${item.periodName}-01-${item.year}`).getMonth() + 1;
+                const date = `${month.toString().padStart(2, '0')}-${item.year}`;
+                const price = item.value;
 
                 // Insert or update price data
                 await db.query(`

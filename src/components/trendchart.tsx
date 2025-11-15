@@ -7,7 +7,7 @@ import {
     PointElement,
     Tooltip,
     Legend,
-    animator,
+    Filler,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 
@@ -17,20 +17,23 @@ ChartJS.register(
     LinearScale,
     PointElement,
     Tooltip,
-    Legend
+    Legend,
+    Filler
 );
 import './styles/trendchart.css';
 
-export default function TrendChart({ labels, data }: { labels: string[]; data: number[] }) {
+export default function TrendChart({ labels, data, color }: { labels: string[]; data: number[]; color: string }) {
     const chartData = {
         labels: labels,
         datasets: [
             {
                 label: "Price",
                 data: data,
-                borderColor: "rgba(55, 125, 34, 1)",
+                borderColor: color,
                 fill: true,
-                tension: 0.4,
+                backgroundColor: `rgba(${parseInt(color.slice(1, 3), 16)}, ${parseInt(color.slice(3, 5), 16)}, ${parseInt(color.slice(5, 7), 16)}, 0.1)`,
+                tension: 0.1,
+                pointRadius: 0,
             },
         ],
     };
@@ -42,6 +45,7 @@ export default function TrendChart({ labels, data }: { labels: string[]; data: n
         scales: {
             y: {
                 beginAtZero: false,
+                
             },
             x: {
                 reverse: true,
@@ -55,6 +59,10 @@ export default function TrendChart({ labels, data }: { labels: string[]; data: n
                 },
             },
         },
+        interaction: {
+            mode: 'nearest' as const,
+            intersect: false,
+        },
         plugins: {
             legend: {
                 display: false,
@@ -66,12 +74,13 @@ export default function TrendChart({ labels, data }: { labels: string[]; data: n
                 displayColors: false,
                 backgroundColor: 'rgba(0, 0, 0, 0.8)',
             },
+            filler: {
+                propagate: true,
+            },
         },
     };
 
     return (
-        <div className="chart-wrapper">
-            <Line data={chartData} options={options} />
-        </div>
+        <Line data={chartData} options={options} color={color} />
     );
 }
